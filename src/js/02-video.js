@@ -13,7 +13,7 @@ const onPlay = function (data) {
   );
   // data is an object containing properties specific to that event
 };
-const onPause = function (data) {
+const onSetCurrentTimePlay = function (data) {
   localStorage.setItem(
     'videoplayer-current-time',
     JSON.stringify({ playerPauseTime: data.seconds })
@@ -21,6 +21,6 @@ const onPause = function (data) {
   // data is an object containing properties specific to that event
 };
 player.on('playing', onPlay);
-player.on('timeupdate', throttle(onPause, 1000));
-player.on('pause', onPause);
-player.on('seeking', onPause);
+player.on('timeupdate', throttle(onSetCurrentTimePlay, 1000));
+player.on('pause', onSetCurrentTimePlay);
+player.on('seeking', onSetCurrentTimePlay);
