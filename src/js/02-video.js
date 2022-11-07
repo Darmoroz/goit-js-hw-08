@@ -27,6 +27,7 @@ player.on('timeupdate', throttle(onSetCurrentTimePlay, 1000));
 // player.on('pause', onSetCurrentTimePlay);
 // player.on('seeking', onSetCurrentTimePlay);
 if (localStorage.getItem(STORAGE_KEY)) {
-    player.setCurrentTime(
-      JSON.parse(localStorage.getItem(STORAGE_KEY)).playerPauseTime
-    );
+  player.setCurrentTime(
+    JSON.parse(localStorage.getItem(STORAGE_KEY)).playerPauseTime
+  );
+}
